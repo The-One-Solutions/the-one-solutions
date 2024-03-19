@@ -165,8 +165,8 @@ function startDrag(event) {
   startX = event.clientX || event.touches[0].clientX; // Get initial touch/mouse position
 }
 
-document.addEventListener('mouseup', endDrag);
-document.addEventListener('touchend', endDrag); // For touchscreens
+// document.addEventListener('mouseup', endDrag);
+// document.addEventListener('touchend', endDrag); // For touchscreens
 
 function endDrag(event) {
     event.preventDefault();
