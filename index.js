@@ -14,8 +14,7 @@ function toggleFunction() {
 
 function checkOrientation() {
     var x = document.getElementById("topnav");
-    if (window.matchMedia("(orientation: landscape)").matches) {
-        // Change the class name to "landscape" when in landscape orientation
+    if (window.matchMedia("(orientation: landscape)").matches) { // Change the class name to "landscape" when in landscape orientation
 
         if (x.className === "nav-container responsive") {
             x.className = "nav-container"
@@ -37,7 +36,7 @@ window.addEventListener('resize', checkOrientation);
 
 
 // filterContainer.addEventListener("click", (event) =>{
-//   if(event.target.classList.contains("filter-item")){
+// if(event.target.classList.contains("filter-item")){
 //        // deactivate existing active 'filter-item'
 //        filterContainer.querySelector(".active").classList.remove("active");
 //        // activate new 'filter-item'
@@ -53,7 +52,7 @@ window.addEventListener('resize', checkOrientation);
 //           item.classList.add("hide");
 //       }
 //        });
-//   }
+// }
 // });
 
 const filterContainer = document.querySelector(".services-filter");
@@ -79,8 +78,7 @@ servicesItems.forEach(item => {
 
 // Event listener for filter items
 filterContainer.addEventListener("click", (event) => {
-    if (event.target.classList.contains("filter-item")) {
-        // deactivate existing active 'filter-item'
+    if (event.target.classList.contains("filter-item")) { // deactivate existing active 'filter-item'
         filterContainer.querySelector(".active").classList.remove("active");
         // activate new 'filter-item'
         event.target.classList.add("active");
@@ -111,15 +109,17 @@ let startX = 0;
 
 // Function to move to a specific slide
 function goToSlide(slideIndex) {
-  currentSlide = slideIndex;
-  slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-  activateDot(currentSlide);
+    currentSlide = slideIndex;
+    slider.style.transform = `translateX(-${
+        currentSlide * slideWidth
+    }px)`;
+    activateDot(currentSlide);
 }
 
 // Function to activate the corresponding dot
 function activateDot(slideIndex) {
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[slideIndex].classList.add('active');
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[slideIndex].classList.add('active');
 }
 
 // Autoplay functionality
@@ -127,32 +127,32 @@ let autoplay = true;
 let intervalId = null;
 
 function startAutoplay() {
-  intervalId = setInterval(() => {
-    currentSlide++;
-    goToSlide(currentSlide % dots.length); // Loop back to first slide
-  }, 3000); // Change the value for desired autoplay interval in milliseconds
+    intervalId = setInterval(() => {
+        currentSlide++;
+        goToSlide(currentSlide % dots.length); // Loop back to first slide
+    }, 3000); // Change the value for desired autoplay interval in milliseconds
 }
 
 function stopAutoplay() {
-  clearInterval(intervalId);
-  intervalId = null;
+    clearInterval(intervalId);
+    intervalId = null;
 }
 
 // Event listeners for buttons and dots
 dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => goToSlide(index));
+    dot.addEventListener('click', () => goToSlide(index));
 });
 
 prevBtn.addEventListener('click', () => {
-  currentSlide--;
-  goToSlide(currentSlide < 0 ? dots.length - 1 : currentSlide);
-  stopAutoplay(); // Stop autoplay on manual navigation
+    currentSlide--;
+    goToSlide(currentSlide < 0 ? dots.length - 1 : currentSlide);
+    stopAutoplay(); // Stop autoplay on manual navigation
 });
 
 nextBtn.addEventListener('click', () => {
-  currentSlide++;
-  goToSlide(currentSlide % dots.length);
-  stopAutoplay(); // Stop autoplay on manual navigation
+    currentSlide++;
+    goToSlide(currentSlide % dots.length);
+    stopAutoplay(); // Stop autoplay on manual navigation
 });
 
 // Event listeners for touch devices
@@ -160,9 +160,9 @@ slider.addEventListener('mousedown', startDrag);
 slider.addEventListener('touchstart', startDrag); // For touchscreens
 
 function startDrag(event) {
-  event.preventDefault(); // Prevent default scrolling behavior
-  isDragging = true;
-  startX = event.clientX || event.touches[0].clientX; // Get initial touch/mouse position
+    event.preventDefault(); // Prevent default scrolling behavior
+    isDragging = true;
+    startX = event.clientX || event.touches[0].clientX; // Get initial touch/mouse position
 }
 
 // document.addEventListener('mouseup', endDrag);
@@ -172,19 +172,17 @@ function endDrag(event) {
     event.preventDefault();
     isDragging = false;
     if (isDragging) { // Check if dragging started
-      const movedX = event.clientX || event.touches[0].clientX - startX;
-      const threshold = slideWidth / 3; // Define threshold for swipe detection
-  
-      if (movedX > threshold) {
-        currentSlide--; // Swipe right, move to previous slide
-      } else if (movedX < -threshold) {
-        currentSlide++; // Swipe left, move to next slide
-      }
-  
-      goToSlide(currentSlide < 0 ? dots.length - 1 : currentSlide % dots.length);
+        const movedX = event.clientX || event.touches[0].clientX - startX;
+        const threshold = slideWidth / 3; // Define threshold for swipe detection
+
+        if (movedX > threshold) {
+            currentSlide--; // Swipe right, move to previous slide
+        } else if (movedX < - threshold) {
+            currentSlide++; // Swipe left, move to next slide
+        }goToSlide(currentSlide < 0 ? dots.length - 1 : currentSlide % dots.length);
     }
-  }
-  
+}
+
 
 // Start autoplay on load
 startAutoplay();
@@ -192,7 +190,6 @@ startAutoplay();
 // Pause autoplay on hover
 slider.addEventListener('mouseenter', stopAutoplay);
 slider.addEventListener('mouseleave', startAutoplay);
-
 
 
 // Library filter
@@ -219,8 +216,7 @@ libraryItem.forEach(item => {
 
 // Event listener for filter items
 libraryFilter.addEventListener("click", (event) => {
-    if (event.target.classList.contains("filter-item")) {
-        // deactivate existing active 'filter-item'
+    if (event.target.classList.contains("filter-item")) { // deactivate existing active 'filter-item'
         libraryFilter.querySelector(".active").classList.remove("active");
         // activate new 'filter-item'
         event.target.classList.add("active");
@@ -236,3 +232,6 @@ libraryFilter.addEventListener("click", (event) => {
         });
     }
 });
+
+
+
