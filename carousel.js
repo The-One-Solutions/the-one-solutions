@@ -63,7 +63,8 @@ function slide(wrapper, items, prev, next) {
 
     function dragStart(e) {
         e = e || window.event;
-        e.preventDefault();
+        // e.preventDefault();
+        e.stopPropagation();
         posInitial = items.offsetLeft;
 
         if (e.type == 'touchstart') {
@@ -86,6 +87,8 @@ function slide(wrapper, items, prev, next) {
             posX1 = e.clientX;
         } items.style.left = (items.offsetLeft - posX2) + "px";
     }
+
+
 
     function dragEnd(e) {
         posFinal = items.offsetLeft;
