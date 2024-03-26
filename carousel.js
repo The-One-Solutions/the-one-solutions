@@ -2,6 +2,7 @@ var slider1 = document.getElementById('slider1'),
     sliderItems = document.getElementById('slides'),
     prev = document.getElementById('prev'),
     next = document.getElementById('next');
+    // pagination = document.getElementById('pagination');
 
 function slide(wrapper, items, prev, next) {
     var posX1 = 0,
@@ -139,6 +140,123 @@ function slide(wrapper, items, prev, next) {
 
         allowShift = true;
     }
+    
 }
 
 slide(slider1, sliderItems, prev, next);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector('.carousel');
+    const container = document.querySelector('.carousel-container');
+    const items = document.querySelectorAll('.carousel-item');
+    const pagination = document.querySelector('.pagination');
+    
+    let currentIndex = 0;
+
+    function updatePagination() {
+      pagination.innerHTML = '';
+      items.forEach((item, index) => {
+        const button = document.createElement('button');
+        button.textContent = index + 1;
+        if (index === currentIndex) {
+          button.classList.add('active');
+        }
+        button.addEventListener('click', () => {
+          goToIndex(index);
+        });
+        pagination.appendChild(button);
+      });
+    }
+
+    function goToIndex(index) {
+      currentIndex = index;
+      const offset = -currentIndex * container.offsetWidth;
+      container.style.transform = `translateX(${offset}px)`;
+      updatePagination();
+    }
+
+    updatePagination();
+
+    // Add touch swipe support
+    let startX = 0;
+    let isDragging = false;
+    let dragOffset = 0;
+
+    carousel.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      dragOffset = 0;
+    });
+
+    carousel.addEventListener('mouseup', () => {
+      isDragging = false;
+      const touchThreshold = container.offsetWidth / 4;
+      if (Math.abs(dragOffset) > touchThreshold) {
+        if (dragOffset > 0 && currentIndex > 0) {
+          goToIndex(currentIndex - 1);
+        } else if (dragOffset < 0 && currentIndex < items.length - 1) {
+          goToIndex(currentIndex + 1);
+        } else {
+          goToIndex(currentIndex);
+        }
+      } else {
+        goToIndex(currentIndex);
+      }
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const x = e.clientX;
+        dragOffset = x - startX;
+        const offset = -currentIndex * container.offsetWidth + dragOffset;
+        container.style.transform = `translateX(${offset}px)`;
+      }
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      isDragging = false;
+    });
+
+    // Touch events for mobile devices
+    carousel.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      isDragging = true;
+      startX = touch.clientX;
+      dragOffset = 0;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+      if (isDragging) {
+        const touch = e.touches[0];
+        const x = touch.clientX;
+        dragOffset = x - startX;
+        const offset = -currentIndex * container.offsetWidth + dragOffset;
+        container.style.transform = `translateX(${offset}px)`;
+      }
+    });
+
+    carousel.addEventListener('touchend', () => {
+      isDragging = false;
+      const touchThreshold = container.offsetWidth / 4;
+      if (Math.abs(dragOffset) > touchThreshold) {
+        if (dragOffset > 0 && currentIndex > 0) {
+          goToIndex(currentIndex - 1);
+        } else if (dragOffset < 0 && currentIndex < items.length - 1) {
+          goToIndex(currentIndex + 1);
+        } else {
+          goToIndex(currentIndex);
+        }
+      } else {
+        goToIndex(currentIndex);
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      container.style.transition = 'none';
+      goToIndex(currentIndex);
+      setTimeout(() => {
+        container.style.transition = '';
+      }, 0);
+    });
+  });
