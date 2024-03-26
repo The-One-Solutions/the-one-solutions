@@ -1110,11 +1110,14 @@ ul, li {
   .carousel-item {
     flex: 0 0 100%;
     max-width: 100%;
+   cursor:grab;
+   text-align: center;
   }
+  
   /* Pagination styles */
   .pagination {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .pagination button {
     cursor: pointer;
@@ -1132,7 +1135,20 @@ ul, li {
   .pagination button.active {
     background: var(--blue-color);
   }
-  .web .primary-btn{
+  .library-card .primary-btn{
     display: block;
     margin-inline: auto;
   }
+.web-img-container{
+    background-color: var(--white-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 2/1;
+    margin-bottom: 30px;
+}
+.web-img-container img{
+    width: 10%;
+    height: auto;
+}
