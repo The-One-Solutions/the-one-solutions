@@ -1,3 +1,6 @@
+
+
+
 function toggleFunction() {
     console.log('hh')
     var x = document.getElementById("topnav");
@@ -28,33 +31,10 @@ checkOrientation();
 
 // Listen for the window resize event to detect orientation changes
 window.addEventListener('resize', checkOrientation);
+// ****************
 
 
-// services filter
-// const filterContainer = document.querySelector(".services-filter"),
-// servicesItems = document.querySelectorAll(".services-item");
-
-
-// filterContainer.addEventListener("click", (event) =>{
-// if(event.target.classList.contains("filter-item")){
-//        // deactivate existing active 'filter-item'
-//        filterContainer.querySelector(".active").classList.remove("active");
-//        // activate new 'filter-item'
-//        event.target.classList.add("active");
-//        const filterValue = event.target.getAttribute("data-filter");
-//        servicesItems.forEach((item) =>{
-//       if(item.classList.contains(filterValue) || filterValue === 'all'){
-//           item.classList.remove("hide");
-//            item.classList.add("show");
-//       }
-//       else{
-//           item.classList.remove("show");
-//           item.classList.add("hide");
-//       }
-//        });
-// }
-// });
-
+//ant design for services 
 const filterContainer = document.querySelector(".services-filter");
 const servicesItems = document.querySelectorAll(".services-item");
 
@@ -94,7 +74,7 @@ filterContainer.addEventListener("click", (event) => {
         });
     }
 });
-
+// *****************
 
 // testimonials
 const slider = document.querySelector('.slider');
@@ -190,8 +170,12 @@ startAutoplay();
 // Pause autoplay on hover
 slider.addEventListener('mouseenter', stopAutoplay);
 slider.addEventListener('mouseleave', startAutoplay);
+// ***********
 
 
+
+
+// ant design for library section
 // Library filter
 const libraryFilter = document.querySelector(".library-filter");
 const libraryItem = document.querySelectorAll(".library-item");

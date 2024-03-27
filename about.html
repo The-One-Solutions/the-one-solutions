@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The One Solution</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .loader-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                z-index: 2;
+                background-color: #515050;
+            }
+            .loader {
+                width: 48px;
+                height: 48px;
+                border: 4px solid rgb(154, 154, 156);
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                box-sizing: border-box;
+                animation: rotation 1s linear infinite;
+            }
+            .loader::after {
+                content: '';
+                box-sizing: border-box;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: #05e8ec;
+                width: 19px;
+                height: 19px;
+                transform: translate(-50%, 50%);
+                border-radius: 50%;
+            }
+
+            @keyframes rotation {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+        <script>
+            window.addEventListener('load', function () { // When the window is fully loaded
+                var loader = document.querySelector('.loader-container');
+                // var content = document.querySelector('.content');
+                loader.style.display = 'none';
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="loader-container">
+            <span class="loader"></span>
+        </div>
+        <nav>
+            <navbar class="navbar-section">
+
+                <div class="logo">
+                    <a href="#">
+                        <img src="./assets/icons/logo.svg" alt="The One Solution logo">
+                    </a>
+                </div>
+
+                <li class="menu-icon">
+                    <img src="./assets/icons/menu-hamburger.svg" onclick="toggleFunction()" alt="menu-icon">
+                </li>
+                <ul class="nav-container" id="topnav">
+                    <li class="menu-close-icon">
+                        <img src="./assets/icons/menu-close.svg" onclick="toggleFunction()" alt="menu-icon">
+                    </li>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#consultancy">Consultancy</a>
+                    </li>
+                    <li>
+                        <a href="#case-studies">Case Studies</a>
+                    </li>
+                    <li>
+                        <a href="#blogs">Blogs and News</a>
+                    </li>
+                    <!-- <li><a href="#why-us"></a></li> -->
+                    <!-- <li><a href="#contact">Locations</a></li> -->
+                    <li>
+                        <a href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </navbar>
+        </nav>
+
+        <section class="about-hero-section">
+            <div class="about-hero-container container">
+                <div class="about-img-container">
+                    <img src="./assets/icons/logo.svg" alt="image">
+                </div>
+                <div class="about-hero-content">
+                    <h1>
+                        Who we are
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="founders-section ">
+            <div class="about-container container">
+                <h1>Founders</h1>
+                <div class="founders-wrapper">
+                    <div class="founders">
+                        <div class="founder-img">
+                            <img src="./assets/icons/Image.svg" alt="image">
+                        </div>
+                        <div>
+                            <h3>Lorem ipsum</h3>
+                            <p>ipusm</p>
+                        </div>
+                    </div>
+                    <div class="founders">
+                        <div class="founder-img">
+                            <img src="./assets/icons/Image.svg" alt="image">
+                        </div>
+                        <div>
+                            <h3>Lorem ipsum</h3>
+                            <p>ipusm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="vision-section" >
+            <div class="vision-section-container container">
+               <div class="vision-content">
+                <h1 class="vision-title">Our commitment</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                </p>
+               </div>
+               <div class="vision-img">
+                    <img src="./assets/icons/Image.svg" alt="image">
+               </div>
+            </div>
+
+            <div class="vision-section-container container">
+                <div class="vision-content">
+                 <h1 class="vision-title">Vision</h1>
+                 <p>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                 </p>
+                </div>
+                <div class="vision-img">
+                     <img src="./assets/icons/Image.svg" alt="image">
+                </div>
+             </div>
+
+             <div class="vision-section-container container">
+                <div class="vision-content">
+                 <h1 class="vision-title">Mission</h1>
+                 <p>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                 </p>
+                </div>
+                <div class="vision-img">
+                     <img src="./assets/icons/Image.svg" alt="image">
+                </div>
+             </div>
+
+        </section>
+        <section class="about-testimonial-section">
+
+        </section>
+        <script src="index.js"></script>
+    </body>
+</html>

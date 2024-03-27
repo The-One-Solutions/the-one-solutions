@@ -6,9 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The One Solution</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .loader-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            background-color: #515050;
+        }
+        .loader {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgb(154, 154, 156);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #05e8ec;
+  width: 19px;
+  height: 19px;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+    // When the window is fully loaded
+    var loader = document.querySelector('.loader-container');
+    // var content = document.querySelector('.content');
+  
+    loader.style.display = 'none';
+});
+    </script>
 </head>
 
 <body>
+    <div class="loader-container">
+        <span class="loader"></span>
+    </div>
     <nav>
         <navbar class="navbar-section">
 
@@ -130,7 +185,7 @@
         </div>
     </section>
 
-    <section class="about-card-section">
+    <section class="about-card-section" id="about">
         <div class="about-card container">
             <div class="about-card-content">
                 <h1>
@@ -141,7 +196,7 @@
                     company at the forefront of web development, digital marketing, and branding, our mission is to
                     deliver bespoke solutions that resonate with your unique business needs and aspirations.
                 </p>
-                <button class="primary-btn"><a href="#">Know more</a></button>
+                <button class="primary-btn"><a href="about.html">Know more</a></button>
             </div>
             <div class="about-card-image">
                 <img src="./assets/icons/big-logo.svg" alt="logo">
@@ -312,25 +367,92 @@
             </div>
             <div class="library-card">
                 <!-- gallery item start -->
-                <div class="library-item  ">
-                    <div class="library-item-inner">
-                        <div class="library-img-container">
-                            <img src="./assets/library-image.png" alt="library-image">
-                        </div>
-                        <div class="library-content">
-                            <h1>Lorem ipsum dolor sit amet</h1>
-                            <p>
-                                The One Solution, we are dedicated to transforming your digital dreams into reality. As
-                                a pioneering company at the forefront of web development, digital marketing, and
-                                branding, our mission is to deliver bespoke solutions that resonate with your unique
-                                business needs and aspirations.
-                            </p>
-                            <div>
-                                <button class="secondary-btn"><a href="#">Explore</a></button>
-                                <button class="secondary-btn"><a href="#">Call Now</a></button>
+                <div class="library-item story ">
+                    <div class="carousel2">
+                        <div class="carousel-container2">
+                            <div class="carousel-item2">
+                                <div class="story-content">
+                                    <h1>
+                                        Lorem ipsum dolor sit.
+                                    </h1>
+                                    <p>
+                                        The One Solution, we are dedicated to transforming your digital dreams into reality. As a pioneering company at the forefront of web development, digital marketing, and branding, our mission is to deliver bespoke solutions that resonate with your unique business needs and aspirations.
+                                    </p>
+                                    <button class="primary-btn"><a href="#">Full Story</a></button>
+                                </div>
+                                <div class="story-img-container">
+                                    <img src="./assets/icons/Image.svg" alt="image">
+                                </div>
                             </div>
+
+                            <div class="carousel-item2">
+                                <div class="story-content">
+                                    <h1>
+                                        Lorem ipsum dolor sit.
+                                    </h1>
+                                    <p>
+                                        The One Solution, we are dedicated to transforming your digital dreams into reality. As a pioneering company at the forefront of web development, digital marketing, and branding, our mission is to deliver bespoke solutions that resonate with your unique business needs and aspirations.
+                                    </p>
+                                    <button class="primary-btn"><a href="#">Full Story</a></button>
+                                </div>
+                                <div class="story-img-container">
+                                    <img src="./assets/icons/Image.svg" alt="image">
+                                </div>
+                            </div>
+
+                            <div class="carousel-item2">
+                                <div class="story-content">
+                                    <h1>
+                                        Lorem ipsum dolor sit.
+                                    </h1>
+                                    <p>
+                                        The One Solution, we are dedicated to transforming your digital dreams into reality. As a pioneering company at the forefront of web development, digital marketing, and branding, our mission is to deliver bespoke solutions that resonate with your unique business needs and aspirations.
+                                    </p>
+                                    <button class="primary-btn"><a href="#">Full Story</a></button>
+                                </div>
+                                <div class="story-img-container">
+                                    <img src="./assets/icons/Image.svg" alt="image">
+                                </div>
+                            </div>
+                        
+                            <!-- Add more carousel items as needed -->
                         </div>
                     </div>
+                    <div class=" pagination2"></div>
+                </div>
+            </div>
+            <div class="library-card">
+                <div class="library-item case">
+                    <div class="case-study">
+                        <div class="story-content">
+                            <h1>
+                                Lorem ipsum dolor sit.
+                            </h1>
+                            <p>
+                                The One Solution, we are dedicated to transforming your digital dreams into reality. As a pioneering company at the forefront of web development, digital marketing, and branding, our mission is to deliver bespoke solutions that resonate with your unique business needs and aspirations.
+                            </p>
+                            <button class="primary-btn"><a href="#">Full Story</a></button>
+                        </div>
+                        <div class="story-img-container">
+                            <img src="./assets/icons/Image.svg" alt="image">
+                        </div>
+                    </div>
+
+                    <div class="case-study">
+                        <div class="story-content">
+                            <h1>
+                                Lorem ipsum dolor sit.
+                            </h1>
+                            <p>
+                                The One Solution, we are dedicated to transforming your digital dreams into reality. As a pioneering company at the forefront of web development, digital marketing, and branding, our mission is to deliver bespoke solutions that resonate with your unique business needs and aspirations.
+                            </p>
+                            <button class="primary-btn"><a href="#">Full Story</a></button>
+                        </div>
+                        <div class="story-img-container">
+                            <img src="./assets/icons/Image.svg" alt="image">
+                        </div>
+                    </div>
+
                 </div>
             </div>
     </section>
