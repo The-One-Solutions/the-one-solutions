@@ -1429,6 +1429,8 @@ li {
     padding-top: 30px;
     height: 100%;
     min-height: 75vh;
+    border-left: 0;
+    border-right: 0;
     /* height: 60vh; */
     /* border-image: var(--color-gredient); */
     /* border-image-source: linear-gradient(270deg, #CB0009 32.29%, #FFB800 48.43%, #006DC6 66.36%); */
@@ -1560,6 +1562,7 @@ li {
 }
 .vision-content{
     width: 60%;
+    text-align: justify;
 }
 .vision-title{
     color: var(--blue-color);
@@ -1573,6 +1576,76 @@ li {
         margin-bottom: 40px;
     }
     .vision-content{
+        width: 100%;
+    }
+}
+/* vision section end */
+
+
+/* about-testimonial-section */
+.about-testimonial{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding-block: 5%;
+    padding-inline: 30px;
+    gap: 20px; 
+}
+.about-testimonial-content{
+    width: 50%;
+    text-align: justify;
+}
+.about-testimonial-content > img{
+    width: 20%;
+    display: block;
+    margin-bottom: 20px;
+    margin-inline:auto;
+}
+
+.play-wrapper{
+    display: block;
+    width: 120px;
+    color: var(--blue-color);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    float: right;
+    margin-top: 20px;
+}
+.play-btn{
+    width: 70%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--blue-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    margin-inline:auto ;
+    margin-bottom: 10px;
+}
+.play-btn img{
+    width: 30%;
+    height: auto;
+}
+.about-testimonial-img{
+    width: 50%;
+    background-color: var(--white-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+@media (max-width:600px) {
+    .about-testimonial{
+        flex-direction: column;
+    }
+    .about-testimonial-content{
+        width: 100%;
+    }
+    .about-testimonial-img{
         width: 100%;
     }
 }
